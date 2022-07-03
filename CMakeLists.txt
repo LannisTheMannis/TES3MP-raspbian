@@ -38,7 +38,7 @@ option(BUILD_MASTER             "Build tes3mp Master Server" OFF)
 
 set(OpenGL_GL_PREFERENCE LEGACY)  # Use LEGACY as we use GL2; GLNVD is for GL3 and up.
 
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -mcpu=cortex-a72 -mtune=cortex-a72 -mfpu=neon-fp-armv8 -latomic)
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -mcpu=cortex-a72 -mtune=cortex-a72 -mfpu=neon-fp-armv8 -latomic")
 
 if (NOT BUILD_LAUNCHER AND NOT BUILD_BROWSER AND NOT BUILD_OPENCS AND NOT BUILD_WIZARD)
    set(USE_QT FALSE)
