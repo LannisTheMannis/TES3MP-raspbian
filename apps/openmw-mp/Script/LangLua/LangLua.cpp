@@ -57,7 +57,7 @@ template<unsigned int I, unsigned int F>
 struct Lua_dispatch_ {
     template<typename R, typename... Args>
     inline static R Lua_dispatch(lua_State*&& lua, Args&&... args) noexcept {
-        constexpr ScriptFunctionData const& F_ = ScriptFunctions::functions[F];
+        ScriptFunctionData const& F_ = ScriptFunctions::functions[F];
         auto arg = luabridge::Stack<typename CharType<F_.func.types[I - 1]>::type>::get(lua, I);
         return Lua_dispatch_<I - 1, F>::template Lua_dispatch<R>(
                 std::forward<lua_State*>(lua),
@@ -70,7 +70,7 @@ template<unsigned int F>
 struct Lua_dispatch_<0, F> {
     template<typename R, typename... Args>
     inline static R Lua_dispatch(lua_State*&&, Args&&... args) noexcept {
-        constexpr ScriptFunctionData const& F_ = ScriptFunctions::functions[F];
+        ScriptFunctionData const& F_ = ScriptFunctions::functions[F];
         return reinterpret_cast<FunctionEllipsis<R>>(F_.func.addr)(std::forward<Args>(args)...);
     }
 };

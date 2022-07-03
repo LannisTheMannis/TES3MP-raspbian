@@ -1,6 +1,7 @@
 #ifndef SCRIPTFUNCTIONS_HPP
 #define SCRIPTFUNCTIONS_HPP
 
+#include <vector>
 #include <Script/Functions/Actors.hpp>
 #include <Script/Functions/Books.hpp>
 #include <Script/Functions/Cells.hpp>
@@ -117,7 +118,7 @@ public:
     static bool IsTimerElapsed(int timerId) noexcept;
 
 
-    static ScriptFunctionData functions[];
+    static std::vector<ScriptFunctionData> functions;
 
     static constexpr ScriptCallbackData callbacks[]{
             {"OnServerInit",             Callback<>()},

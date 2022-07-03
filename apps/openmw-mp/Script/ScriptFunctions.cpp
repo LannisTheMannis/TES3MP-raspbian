@@ -8,7 +8,7 @@
 
 template<typename... Types>
 constexpr char TypeString<Types...>::value[];
-ScriptFunctionData ScriptFunctions::functions[]{
+std::vector<ScriptFunctionData> ScriptFunctions::functions{
             {"CreateTimer",         ScriptFunctions::CreateTimer},
             {"CreateTimerEx",       ScriptFunctions::CreateTimerEx},
             {"MakePublic",          ScriptFunctions::MakePublic},
