@@ -8,7 +8,40 @@
 
 template<typename... Types>
 constexpr char TypeString<Types...>::value[];
-constexpr ScriptFunctionData ScriptFunctions::functions[];
+ScriptFunctionData ScriptFunctions::functions[]{
+            {"CreateTimer",         ScriptFunctions::CreateTimer},
+            {"CreateTimerEx",       ScriptFunctions::CreateTimerEx},
+            {"MakePublic",          ScriptFunctions::MakePublic},
+            {"CallPublic",          ScriptFunctions::CallPublic},
+
+            {"StartTimer",          ScriptFunctions::StartTimer},
+            {"StopTimer",           ScriptFunctions::StopTimer},
+            {"RestartTimer",        ScriptFunctions::RestartTimer},
+            {"FreeTimer",           ScriptFunctions::FreeTimer},
+            {"IsTimerElapsed",      ScriptFunctions::IsTimerElapsed},
+
+            ACTORAPI,
+            BOOKAPI,
+            CELLAPI,
+            CHARCLASSAPI,
+            CHATAPI,
+            DIALOGUEAPI,
+            FACTIONAPI,
+            GUIAPI,
+            ITEMAPI,
+            MECHANICSAPI,
+            MISCELLANEOUSAPI,
+            POSITIONAPI,
+            QUESTAPI,
+            RECORDSDYNAMICAPI,
+            SHAPESHIFTAPI,
+            SERVERAPI,
+            SETTINGSAPI,
+            SPELLAPI,
+            STATAPI,
+            OBJECTAPI,
+            WORLDSTATEAPI
+    };
 constexpr ScriptCallbackData ScriptFunctions::callbacks[];
 
 void ScriptFunctions::MakePublic(ScriptFunc _public, const char *name, char ret_type, const char *def) noexcept

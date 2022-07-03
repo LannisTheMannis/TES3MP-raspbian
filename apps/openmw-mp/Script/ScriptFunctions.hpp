@@ -117,40 +117,7 @@ public:
     static bool IsTimerElapsed(int timerId) noexcept;
 
 
-    static constexpr ScriptFunctionData functions[]{
-            {"CreateTimer",         ScriptFunctions::CreateTimer},
-            {"CreateTimerEx",       ScriptFunctions::CreateTimerEx},
-            {"MakePublic",          ScriptFunctions::MakePublic},
-            {"CallPublic",          ScriptFunctions::CallPublic},
-
-            {"StartTimer",          ScriptFunctions::StartTimer},
-            {"StopTimer",           ScriptFunctions::StopTimer},
-            {"RestartTimer",        ScriptFunctions::RestartTimer},
-            {"FreeTimer",           ScriptFunctions::FreeTimer},
-            {"IsTimerElapsed",      ScriptFunctions::IsTimerElapsed},
-
-            ACTORAPI,
-            BOOKAPI,
-            CELLAPI,
-            CHARCLASSAPI,
-            CHATAPI,
-            DIALOGUEAPI,
-            FACTIONAPI,
-            GUIAPI,
-            ITEMAPI,
-            MECHANICSAPI,
-            MISCELLANEOUSAPI,
-            POSITIONAPI,
-            QUESTAPI,
-            RECORDSDYNAMICAPI,
-            SHAPESHIFTAPI,
-            SERVERAPI,
-            SETTINGSAPI,
-            SPELLAPI,
-            STATAPI,
-            OBJECTAPI,
-            WORLDSTATEAPI
-    };
+    static ScriptFunctionData functions[];
 
     static constexpr ScriptCallbackData callbacks[]{
             {"OnServerInit",             Callback<>()},
